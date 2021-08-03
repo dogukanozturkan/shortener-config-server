@@ -1,6 +1,9 @@
+# SPRING
 spring:
   application:
     name: gateway-service
+
+# SPRING CLOUD
   cloud:
     loadbalancer:
       ribbon:
@@ -16,10 +19,11 @@ spring:
           predicates:
             - Path=/api/**
 
-
+# INFRA
 server:
   port: 9092
 
+# METRICS
 management:
   endpoints:
     web:

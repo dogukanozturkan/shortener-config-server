@@ -4,10 +4,12 @@ spring:
     name: shortener-api
   profiles:
     active: shortener-api
+
+# SPRING DATA
   jpa:
     open-in-view: false
     show-sql: true
-    database: mysql
+    database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQL10Dialect
     properties:
       hibernate:
@@ -28,9 +30,13 @@ spring:
     init:
       mode: always
       platform: postgres
+
+# REDIS
   redis:
     host: localhost
     port: 6379
+
+# JACKSON
   jackson:
     serialization:
       INDENT_OUTPUT: true
@@ -39,18 +45,11 @@ spring:
   mvc:
     throw-exception-if-no-handler-found: true
 
-# INFRA
-server:
-  port: 8080
-
-log:
-  app-name: shortener-api
-
 # SPRING CLOUD
   cloud:
     loadbalancer:
-      ribbon:
-        enabled: false
+    ribbon:
+    enabled: false
 
 retry-config:
   initial-interval-ms: 1000
@@ -58,11 +57,6 @@ retry-config:
   multiplier: 2.0
   maxAttempts: 3
   sleep-time-ms: 2000
-
-# LOGGING
-logging:
-  level:
-    com.link.shortener.shortenerapi: DEBUG
 
 # SWAGGER
 springdoc:
