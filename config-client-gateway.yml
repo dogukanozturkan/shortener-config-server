@@ -19,10 +19,6 @@ spring:
           predicates:
             - Path=/api/**
 
-# INFRA
-server:
-  port: 9092
-
 # METRICS
 management:
   endpoints:

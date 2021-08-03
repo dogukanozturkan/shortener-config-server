@@ -2,8 +2,6 @@
 spring:
   application:
     name: shortener-api
-  profiles:
-    active: shortener-api
 
 # SPRING DATA
   jpa:
