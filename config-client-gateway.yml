@@ -24,9 +24,11 @@ management:
   endpoints:
     web:
       base-path: /actuator
-      exposure.include: health, prometheus, gateway
+      exposure.include: health, prometheus, gateway, metrics
       path-mapping.prometheus: metrics
   endpoint:
+    metrics:
+      enabled: true
     health:
       show-details: always
     prometheus:
